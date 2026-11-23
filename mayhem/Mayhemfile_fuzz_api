@@ -1,0 +1,12 @@
+project: savantenvs/esp-mqtt
+target: fuzz_api
+duration: 1200
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_api/testsuite
+
+cmds:
+  - cmd: /mayhem/build-mayhem/fuzz_api
+    libfuzzer: true
+    timeout: 5
